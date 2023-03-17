@@ -21,75 +21,193 @@
       <h4 class="fw-bold">Art Bernales.</h4>
     </header>
 
+    <!-- <div class="dropdown">
+      <a
+        class="btn btn-secondary dropdown-toggle"
+        href="#"
+        role="button"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        Dropdown link
+      </a>
+
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Length</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div> -->
+
+    <div class="d-flex justify-content-center mt-5">
+      <select
+        name="option"
+        id="select"
+        class="mass py-2 px-3 border-0"
+        onchange="chooseCategory()"
+      >
+        <option value="">Choose category</option>
+        <option value="length">Length</option>
+        <option value="mass">mass</option>
+        <option value="temperature">temperature</option>
+      </select>
+    </div>
+
     <div class="d-flex justify-content-center align-items-center">
       <div class="converter_parent rounded-4 p-4">
-        <label for="cm">Centimeter:</label>
-        <input
-          type="number"
-          class="form-control"
-          name="cm"
-          id="cm"
-          onkeyup="one()"
-        /><br />
-        <label for="meter">Meter:</label>
-        <input
-          type="number"
-          class="form-control"
-          name="meter"
-          id="meter"
-          onkeyup="two()"
-        />
-        <br />
-        <label for="kilometer">Kilometer:</label>
-        <input
-          type="number"
-          class="form-control"
-          id="kilometer"
-          name="kilometer"
-          onkeyup="three()"
-        /><br />
-        <label for="melimeter">Melimeter:</label>
-        <input
-          type="number"
-          class="form-control"
-          id="melimeter"
-          name="melimeter"
-          onkeyup="melimeter()"
-        /><br />
-        <label for="inch">Inch:</label>
-        <input
-          type="number"
-          class="form-control"
-          id="inch"
-          name="inch"
-          onkeyup="inch()"
-        /><br />
-        <label for="foot">Foot:</label>
-        <input
-          type="number"
-          class="form-control"
-          id="foot"
-          name="foot"
-          onkeyup="foot()"
-        /><br />
-        <label for="miles">Miles:</label>
-        <input
-          type="number"
-          class="form-control"
-          id="miles"
-          name="miles"
-          onkeyup="miles()"
-        /><br />
+        <div id="length">
+          <label for="cm">Centimeter:</label>
+          <input
+            type="number"
+            class="form-control"
+            name="cm"
+            id="cm"
+            onkeyup="one()"
+          /><br />
+          <label for="meter">Meter:</label>
+          <input
+            type="number"
+            class="form-control"
+            name="meter"
+            id="meter"
+            onkeyup="two()"
+          />
+          <br />
+          <label for="kilometer">Kilometer:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="kilometer"
+            name="kilometer"
+            onkeyup="three()"
+          /><br />
+          <label for="melimeter">Melimeter:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="melimeter"
+            name="melimeter"
+            onkeyup="melimeter()"
+          /><br />
+          <label for="inch">Inch:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="inch"
+            name="inch"
+            onkeyup="inch()"
+          /><br />
+          <label for="foot">Foot:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="foot"
+            name="foot"
+            onkeyup="foot()"
+          /><br />
+          <label for="miles">Miles:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="miles"
+            name="miles"
+            onkeyup="miles()"
+          /><br />
+        </div>
+
+        <!-- MASS -->
+        <div id="mass">
+          <label for="kg">Kilogram:</label>
+          <input
+            type="number"
+            class="form-control"
+            name="kg"
+            id="kg"
+            onkeyup="kg()"
+          /><br />
+          <label for="gram">Gram:</label>
+          <input
+            type="number"
+            class="form-control"
+            name="gram"
+            id="gram"
+            onkeyup="gram()"
+          />
+          <br />
+          <label for="miligram">Miligram:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="miligram"
+            name="miligram"
+            onkeyup="miligram()"
+          /><br />
+          <label for="ton">Ton:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="ton"
+            name="ton"
+            onkeyup="ton()"
+          /><br />
+        </div>
+
+        <!-- TEMPERATURE -->
+        <div id="temperature">
+          <label for="celcius">Celcius:</label>
+          <input
+            type="number"
+            class="form-control"
+            name="celcius"
+            id="celcius"
+            onkeyup="celcius()"
+          /><br />
+          <label for="kelvin">Kelvin [K]:</label>
+          <input
+            type="number"
+            class="form-control"
+            name="kelvin"
+            id="kelvin"
+            onkeyup="kelvin()"
+          />
+          <br />
+          <label for="farenheit">Fahrenheit:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="farenheit"
+            name="farenheit"
+            onkeyup="farenheit()"
+          /><br />
+          <label for="rankine">Rankine:</label>
+          <input
+            type="number"
+            class="form-control"
+            id="rankine"
+            name="rankine"
+            onkeyup="rankine()"
+          /><br />
+        </div>
       </div>
     </div>
 
-    <footer class="bg-light border-top w-100 p-3" style="margin-top: 6rem">
+    <footer
+      class="bg-light border-top w-100 p-3"
+      style="margin-top: 12rem; height: auto"
+    >
       <h6 class="text-center text-dark">Kodego WD52P</h6>
       <h6 class="text-center text-dark">
         Converter - Art Alfred Bernales
         <span class="d-block">March 04, 2023</span>
       </h6>
     </footer>
+
+    <!-- BOOTSTRAP -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
 
     <script src="./converter.js"></script>
   </body>

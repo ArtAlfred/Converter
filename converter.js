@@ -1,3 +1,30 @@
+function chooseCategory() {
+  const select = document.getElementById("select").value;
+  const length = document.getElementById("length");
+  const mass = document.getElementById("mass");
+  const temperature = document.getElementById("temperature");
+
+  if (select === "length") {
+    length.style.display = "block";
+    mass.style.display = "none";
+    temperature.style.display = "none";
+  } else if (select == "mass") {
+    mass.style.display = "block";
+    length.style.display = "none";
+    temperature.style.display = "none";
+  } else if (select == "temperature") {
+    temperature.style.display = "block";
+    mass.style.display = "none";
+    length.style.display = "none";
+  } else {
+    length.style.display = "block";
+    mass.style.display = "none";
+    temperature.style.display = "none";
+  }
+}
+
+////////////////////////////////////////////////////////
+// LENGTH
 function one() {
   let cm = document.getElementById("cm").value;
   let meter = document.getElementById("meter");
@@ -171,4 +198,136 @@ function miles() {
   melimeter.value = milesTomm;
   inch.value = milesToinch;
   foot.value = milesTofoot;
+}
+
+////////////////////////////////////////////////////////
+// MASS
+function kg() {
+  let kg = document.getElementById("kg").value;
+  let gram = document.getElementById("gram");
+  let miligram = document.getElementById("miligram");
+  let ton = document.getElementById("ton");
+
+  let kgTog = kg * 1000;
+  let kgTomiligram = kg * 1000000;
+  let kgToton = kg * 0.001;
+
+  // VALUE RESULTS
+  gram.value = kgTog;
+  miligram.value = kgTomiligram;
+  ton.value = kgToton;
+}
+
+function gram() {
+  let kg = document.getElementById("kg");
+  let gram = document.getElementById("gram").value;
+  let miligram = document.getElementById("miligram");
+  let ton = document.getElementById("ton");
+
+  let gTokg = gram * 0.001;
+  let gTomiligram = gram * 1000;
+  let gToton = gram * 1.0e-6;
+
+  // VALUE RESULTS
+  kg.value = gTokg;
+  miligram.value = gTomiligram;
+  ton.value = gToton;
+}
+
+function miligram() {
+  let kg = document.getElementById("kg");
+  let gram = document.getElementById("gram");
+  let miligram = document.getElementById("miligram").value;
+  let ton = document.getElementById("ton");
+
+  let mgTokg = miligram * 1.0e-6;
+  let mgTomiligram = miligram * 0.001;
+  let mgToton = miligram * 1.0e-9;
+
+  // VALUE RESULTS
+  kg.value = mgTokg;
+  gram.value = mgTomiligram;
+  ton.value = mgToton;
+}
+
+function ton() {
+  let kg = document.getElementById("kg");
+  let gram = document.getElementById("gram");
+  let miligram = document.getElementById("miligram");
+  let ton = document.getElementById("ton").value;
+
+  let tonTokg = ton * 1000;
+  let tonTogram = ton * 1000000;
+  let tonTomiligram = ton * 1000000000;
+
+  // VALUE RESULTS
+  kg.value = tonTokg;
+  gram.value = tonTogram;
+  miligram.value = tonTomiligram;
+}
+
+// TEMPERATURE
+
+function celcius() {
+  let celcius = document.getElementById("celcius").value;
+  let kelvin = document.getElementById("kelvin");
+  let farenheit = document.getElementById("farenheit");
+  let rankine = document.getElementById("rankine");
+
+  let celciusTokelvin = parseInt(celcius) + 273.15;
+  let celciusTofarenheit = (celcius * 9) / 5 + 32;
+  let celciusTorankine = ((parseInt(celcius) + 273.15) * 9) / 5;
+
+  // VALUE RESULTS
+  kelvin.value = celciusTokelvin;
+  farenheit.value = celciusTofarenheit;
+  rankine.value = celciusTorankine;
+}
+
+function kelvin() {
+  let celcius = document.getElementById("celcius");
+  let kelvin = document.getElementById("kelvin").value;
+  let farenheit = document.getElementById("farenheit");
+  let rankine = document.getElementById("rankine");
+
+  let kelvinTocelcius = parseFloat(kelvin - 273.15).toFixed(2);
+  let kelvinTofarenheit = (kelvin * 9) / 5 - 459.67;
+  let kelvinTorankine = (kelvin * 9) / 5;
+
+  // VALUE RESULTS
+  celcius.value = kelvinTocelcius;
+  farenheit.value = kelvinTofarenheit;
+  rankine.value = kelvinTorankine;
+}
+
+function farenheit() {
+  let celcius = document.getElementById("celcius");
+  let kelvin = document.getElementById("kelvin");
+  let farenheit = document.getElementById("farenheit").value;
+  let rankine = document.getElementById("rankine");
+
+  let farenheitTocelcius = ((farenheit - 32) * 5) / 9;
+  let farenheitTokelvin = ((parseInt(farenheit) + 459.67) * 5) / 9;
+  let farenheitTorankine = parseInt(farenheit) + 459.67;
+
+  // VALUE RESULTS
+  celcius.value = farenheitTocelcius;
+  kelvin.value = farenheitTokelvin;
+  rankine.value = farenheitTorankine;
+}
+
+function rankine() {
+  let celcius = document.getElementById("celcius");
+  let kelvin = document.getElementById("kelvin");
+  let farenheit = document.getElementById("farenheit");
+  let rankine = document.getElementById("rankine").value;
+
+  let rankineTocelcius = parseFloat(((rankine - 491.67) * 5) / 9).toFixed(2);
+  let rankineTokelvin = parseFloat((rankine * 5) / 9).toFixed(2);
+  let rankineTofarenheit = rankine - 459.67;
+
+  // VALUE RESULTS
+  celcius.value = rankineTocelcius;
+  kelvin.value = rankineTokelvin;
+  farenheit.value = rankineTofarenheit;
 }
